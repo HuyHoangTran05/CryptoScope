@@ -1,0 +1,34 @@
+project_id: "bigdata-project-495412"
+region: "asia-southeast1"
+zone: "asia-southeast1-a"
+
+gcs:
+  bronze_bucket: "bigdata-project-495412-bronze"
+  silver_bucket: "bigdata-project-495412-silver"
+  gold_bucket: "bigdata-project-495412-gold"
+  deadletter_bucket: "bigdata-project-495412-deadletter"
+
+coingecko:
+  secret_name: "coingecko-api-key"
+  top_n_coins: 10
+  incremental_days: 7
+
+processing:
+  timezone: "UTC"
+  parquet_compression: "snappy"
+
+bigquery:
+  dataset: "cryptoscope_analytics"
+
+cloudsql:
+  instance_name: "cryptoscope-pg"
+  database_name: "cryptoscope"
+
+service_accounts:
+  ingestion: "sa-ingestion@bigdata-project-495412.iam.gserviceaccount.com"
+  dataproc_etl: "sa-dataproc-etl@bigdata-project-495412.iam.gserviceaccount.com"
+  dashboard: "sa-dashboard@bigdata-project-495412.iam.gserviceaccount.com"
+  composer: "sa-composer@bigdata-project-495412.iam.gserviceaccount.com"
+
+monitoring:
+  budget_usd: 150
